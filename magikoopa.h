@@ -23,7 +23,7 @@ class magikoopa:public range{
     int getFuerza();
     //Constructores
     magikoopa(string,int,int,int,string,int,int,int,int);
-    /*Nombre, batallas,exp,color,hp,defensa,velocidad,fuerza*/
+    /*Nombre, batallas,exp,rango,color,hp,defensa,velocidad,fuerza*/
     magikoopa();
     virtual ~magikoopa();
 

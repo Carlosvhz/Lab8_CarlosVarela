@@ -11,7 +11,7 @@ class range:public minion{
     int getRango();
     //Constructor y destructor
     range(string,int,int,int);
-      /*Nombre, batallas, exp, capacidad de intimidar*/
+      /*Nombre, batallas, exp, rango de ataque*/
     range();
     virtual ~range();
 };

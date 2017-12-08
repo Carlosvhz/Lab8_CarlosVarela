@@ -20,7 +20,7 @@ class hammerbro:public range{
     int getFuerza();
     //Constructores
     hammerbro(string,int,int,int,int,int,int,int,int);
-    /*Nombre, batallas,exp,tamaño,hp,defensa,velocidad,fuerza*/
+    /*Nombre, batallas,exp,rango,tamaño,hp,defensa,velocidad,fuerza*/
     hammerbro();
     virtual ~hammerbro();
 

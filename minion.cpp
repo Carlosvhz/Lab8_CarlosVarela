@@ -1,5 +1,6 @@
 #include "minion.h"
-
+#include <iostream>
+using namespace std;
 /*Nombre,batallas,hp,def,vel,fuer,poder*/
 minion::minion(string pnombre, int pbatallas_ganadas,int php, int pdef, int pvel, int pfuer, int poder){
   nombre = pnombre;

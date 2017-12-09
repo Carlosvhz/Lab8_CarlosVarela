@@ -15,6 +15,7 @@ using namespace std;
 //Prototipos
 void menuOpciones(int,vector<minion*>*,vector<equipo*>*);
 void simulacion(equipo*,equipo*);
+minion* resetearvida(minion*);
 
 int main(){
   vector<minion*> minions;
@@ -303,6 +304,56 @@ void menuOpciones(int opcion, vector<minion*> *minions, vector<equipo*> *equipos
   }
 }
 
-void simulacion(equipo* equipo1, equipo* equipo2){
+minion* resetearvida(minion* m){
 
+}
+
+void simulacion(equipo* equipo1, equipo* equipo2){
+  vector<minion*> *vector1 = equipo1->getEquipo();
+  vector<minion*> *vector2 = equipo2->getEquipo();
+  goomba* Goomba;
+  chainchomp* Chainchomp;
+  boo* Boo;
+  paratroopa* Paratropa;
+  hammerbro* Hammerbro;
+  magikoopa* MagiKoopa;
+  goomba* Goomba2;
+  chainchomp* Chainchomp2;
+  boo* Boo2;
+  paratroopa* Paratropa2;
+  hammerbro* Hammerbro2;
+  magikoopa* MagiKoopa2;
+  for(int i=1; i<7; i++){
+    if(dynamic_cast<goomba*>(vector1->at(i))){
+      Goomba = dynamic_cast<goomba*>(vector1->at(i));
+      if(dynamic_cast<goomba*>(vector2->at(i))){
+        Goomba2 = dynamic_cast<goomba*>(vector2->at(i));
+      }
+    }else if(dynamic_cast<chainchomp*>(vector1->at(i))){
+      Chainchomp = dynamic_cast<chainchomp*>(vector1->at(i));
+      if(dynamic_cast<chainchomp*>(vector2->at(i))){
+        Chainchomp2 = dynamic_cast<chainchomp*>(vector2->at(i));
+      }
+    }else if(dynamic_cast<boo*>(vector1->at(i))){
+      Boo = dynamic_cast<boo*>(vector1->at(i));
+      if(dynamic_cast<boo*>(vector2->at(i))){
+        Boo2 = dynamic_cast<boo*>(vector2->at(i));
+      }
+    }else if(dynamic_cast<paratroopa*>(vector1->at(i))){
+      Paratropa = dynamic_cast<paratroopa*>(vector1->at(i));
+      if(dynamic_cast<paratroopa*>(vector2->at(i))){
+        Paratropa2 = dynamic_cast<paratroopa*>(vector2->at(i));
+      }
+    }else if(dynamic_cast<hammerbro*>(vector1->at(i))){
+      Hammerbro = dynamic_cast<hammerbro*>(vector1->at(i));
+      if(dynamic_cast<hammerbro*>(vector2->at(i))){
+        Hammerbro2 = dynamic_cast<hammerbro*>(vector2->at(i));
+      }
+    }else if(dynamic_cast<magikoopa*>(vector1->at(i))){
+      MagiKoopa = dynamic_cast<hammerbro*>(vector1->at(i));
+      if(dynamic_cast<magikoopa*>(vector2->at(i))){
+        MagiKoopa2 = dynamic_cast<hammerbro*>(vector2->at(i));
+      }
+    }
+  }
 }

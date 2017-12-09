@@ -1,5 +1,7 @@
 #include "boo.h"
+#include <iostream>
 
+using namespace std;
 
 /*Nombre,batallas,hp,def,vel,fuer,poder,color*/
 boo::boo(string nombre,int batallas,int hp,int def,int vel,int fuer,int poder,string pcolor)
@@ -16,5 +18,5 @@ string boo::getColor(){
 boo::~boo(){}
 
 void boo::ataque(minion* mi){
-
+  cout<<"Boo"<<endl;
 }

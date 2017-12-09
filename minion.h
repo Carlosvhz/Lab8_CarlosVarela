@@ -14,7 +14,9 @@ class minion{
     int exp;
 
   public:
-    bool getOcupacion();
+    string getNombre();
+    bool getEstado();
+    void setEstado(bool);
     minion(string,int,int);
     minion();
     virtual ~minion();

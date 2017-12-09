@@ -1,7 +1,7 @@
-run:	main.o minion.o melee.o goomba.o chainchomp.o flying.o boo.o paratroopa.o range.o hammerbro.o magikoopa.o
-	g++ main.o minion.o melee.o goomba.o chainchomp.o flying.o boo.o paratroopa.o range.o hammerbro.o magikoopa.o -o run
+run:	main.o minion.o melee.o goomba.o chainchomp.o flying.o boo.o paratroopa.o range.o hammerbro.o magikoopa.o equipo.o
+	g++ main.o minion.o melee.o goomba.o chainchomp.o flying.o boo.o paratroopa.o range.o hammerbro.o magikoopa.o equipo.o -o run
 
-main.o:	minion.h melee.h goomba.h chainchomp.h flying.h boo.h paratroopa.h range.h hammerbro.h magikoopa.h main.cpp
+main.o:	minion.h melee.h goomba.h chainchomp.h flying.h boo.h paratroopa.h range.h hammerbro.h magikoopa.h equipo.h main.cpp
 	g++ -c main.cpp
 
 mininon.o:	minion.h minion.cpp
@@ -33,5 +33,9 @@ hammerbro.o:	hammerbro.h hammerbro.cpp
 
 magikoopa.o:	magikoopa.h magikoopa.cpp
 	g++ -c magikoopa.cpp
+
+equipo.o:	equipo.h equipo.cpp
+	g++ -c equipo.cpp
+
 clear:
 	rm *.o run

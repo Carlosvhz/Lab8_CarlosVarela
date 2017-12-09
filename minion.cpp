@@ -7,9 +7,18 @@ minion::minion(string pnombre, int pbatallas_ganadas, int pexp){
   desocupado = true;
 }
 
-bool minion::getOcupacion(){
+string minion::getNombre(){
+  return nombre;
+}
+
+bool minion::getEstado(){
   return desocupado;
 }
+
+void minion::setEstado(bool estado){
+  desocupado = estado;
+}
+
 minion::minion(){}
 
 minion::~minion(){}

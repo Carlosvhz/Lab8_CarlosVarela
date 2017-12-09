@@ -3,28 +3,21 @@
 
 #include "flying.h"
 #include <string>
+#include "minion.h"
 
 class boo:public flying{
 
   private:
     string color;
-    int hp;
-    int defensa;
-    int velocidad;
-    int fuerza;
 
   public:
     string getColor();
-    int gethp();
-    int getDefensa();
-    int getVelocidad();
-    int getFuerza();
     //Constructores
-    boo(string,int,int,string,int,int,int,int);
-    /*Nombre, batallas, exp,color,hp,defensa,velocidad,fuerza*/
+    boo(string,int,int,int,int,int,int,string);
+   /*Nombre,batallas,hp,def,vel,fuer,poder,color*/
     boo();
     virtual ~boo();
-    virtual int ataque();
+    void ataque(minion*);
 };
 
 

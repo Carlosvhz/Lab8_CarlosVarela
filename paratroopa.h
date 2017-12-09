@@ -3,28 +3,21 @@
 
 #include "flying.h"
 #include <string>
+#include "minion.h"
 
 class paratroopa:public flying{
 
   private:
     string color_Caparazon;
-    int hp;
-    int defensa;
-    int velocidad;
-    int fuerza;
 
   public:
     string getColorcaparazon();
-    int gethp();
-    int getDefensa();
-    int getVelocidad();
-    int getFuerza();
     //Constructores
-    paratroopa(string,int,int,string,int,int,int,int);
-    /*Nombre, batallas, exp,color,hp,defensa,velocidad,fuerza*/
+    paratroopa(string,int,int,int,int,int,int,string);
+    /*Nombre,batallas,hp,def,vel,fuer,poder,color*/
     paratroopa();
     virtual ~paratroopa();
-    virtual int ataque();
+    void ataque(minion*);
 };
 
 

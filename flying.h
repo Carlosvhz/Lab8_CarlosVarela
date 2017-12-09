@@ -7,11 +7,11 @@ class flying:public minion{
 
   public:
     //Constructor y destructor
-    flying(string,int,int);
-      /*Nombre, batallas, exp*/
+    /*Nombre,batallas,hp,def,vel,fuer,poder*/
+    flying(string,int,int,int,int,int,int);
     flying();
     virtual ~flying();
-    virtual int ataque();
+    virtual void ataque(minion*);
 };
 
 #endif

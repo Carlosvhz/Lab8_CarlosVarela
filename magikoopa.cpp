@@ -2,12 +2,9 @@
 
 
 /*Nombre, batallas, exp, capacidad de intimidar,tamaño,hp,defensa,velocidad,fuerza*/
-magikoopa::magikoopa(string nombre,int batallas,int exp,int rango,string color,int php,int pdefensa,int pvelocidad,int pfuerza):range(nombre,batallas,exp,rango){
+magikoopa::magikoopa(string nombre,int batallas, int hp, int def, int vel, int fuer, int poder, int prango_ataque, string color)
+          :range(nombre,batallas,hp,def,vel,fuer,poder,prango_ataque){
   color_traje = color;
-  hp = php;
-  defensa = pdefensa;
-  velocidad = pvelocidad;
-  fuerza = pfuerza;
 }
 
 magikoopa::magikoopa(){}
@@ -15,25 +12,9 @@ magikoopa::magikoopa(){}
 string magikoopa::getColortraje(){
   return color_traje;
 }
-int magikoopa::gethp(){
-  return hp;
-}
-
-int magikoopa::getDefensa(){
-  return defensa;
-}
-
-int magikoopa::getVelocidad(){
-  return velocidad;
-}
-
-int magikoopa::getFuerza(){
-  return fuerza;
-}
 
 magikoopa::~magikoopa(){}
 
-int magikoopa::ataque(){
+void magikoopa::ataque(minion* mi){
 
-  return 0;
 }

@@ -73,7 +73,7 @@ void menuOpciones(int opcion, vector<minion*> *minions, vector<equipo*> *equipos
           }
           cout<<"-Capacidad de intimidar: ";
           cin>>capacidad;
-          Minion = new goomba(nombre,batallas,0,capacidad,size,hp,0,65,10);
+          minions->push_back(new goomba(nombre,batallas,hp,0,65,10,2,capacidad,size));
         }
         break;
 
@@ -90,7 +90,7 @@ void menuOpciones(int opcion, vector<minion*> *minions, vector<equipo*> *equipos
           }
           cout<<"-Capacidad de intimidar: ";
           cin>>capacidad;
-          Minion = new chainchomp(nombre,batallas,0,capacidad,color,hp,60,20,15);
+          minions->push_back(new chainchomp(nombre,batallas,hp,60,20,15,1,capacidad,color));
         }
         break;
 
@@ -104,7 +104,7 @@ void menuOpciones(int opcion, vector<minion*> *minions, vector<equipo*> *equipos
             cout<<"No se puede pasar del limite... Ingrese de nuevo: ";
             cin>>hp;
           }
-          Minion = new boo(nombre,batallas,0,color,hp,20,35,8);
+          minions->push_back(new boo(nombre,batallas,hp,20,35,8,3,color));
         }
         break;
 
@@ -118,7 +118,7 @@ void menuOpciones(int opcion, vector<minion*> *minions, vector<equipo*> *equipos
             cout<<"No se puede pasar del limite... Ingrese de nuevo: ";
             cin>>hp;
           }
-          Minion = new paratroopa(nombre,batallas,0,color,hp,40,10,9);
+          minions->push_back(new paratroopa(nombre,batallas,hp,40,10,9,4,color));
         }
         break;
 
@@ -134,7 +134,7 @@ void menuOpciones(int opcion, vector<minion*> *minions, vector<equipo*> *equipos
           }
           cout<<"-Ingrese rango de ataque: ";
           cin>>rango;
-          Minion = new hammerbro(nombre,batallas,0,rango,tamano,hp,15,30,6);
+          minions->push_back(new hammerbro(nombre,batallas,hp,15,30,6,0,rango,tamano));
         }
         break;
 
@@ -151,11 +151,10 @@ void menuOpciones(int opcion, vector<minion*> *minions, vector<equipo*> *equipos
           }
           cout<<"-Ingrese rango de ataque: ";
           cin>>rango;
-          Minion = new magikoopa(nombre,batallas,0,rango,color,hp,15,30,6);
+          minions->push_back(new magikoopa(nombre,batallas,hp,0,60,7,0,rango,color));
         }
       }
       cout<<"¡Minion agregado!"<<endl;
-      minions->push_back(Minion);
     } //=====>Fin case 1
     break;
 
@@ -276,7 +275,7 @@ void menuOpciones(int opcion, vector<minion*> *minions, vector<equipo*> *equipos
             break;
 
             case 2:{ // ===> Quitar minions de la lista
-              /*int numero;
+              int numero;
               char resp;
               do{
                 cout<<"Lista de minions del equipo seleccionado: "<<endl;
@@ -293,7 +292,7 @@ void menuOpciones(int opcion, vector<minion*> *minions, vector<equipo*> *equipos
                 cout<<"¡¡Minion eliminado!!"<<endl
                     <<"¿Desea continuar eliminando minions del equipo?[s]: ";
                 cin>>resp;
-              }while(resp=='s');*/
+              }while(resp=='s');
             }
             break;
           }

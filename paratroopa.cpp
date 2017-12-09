@@ -2,12 +2,9 @@
 
 
 /*Nombre, batallas, exp,color,hp,defensa,velocidad,fuerza*/
-paratroopa::paratroopa(string nombre,int batallas,int exp,string pcolor,int php,int pdefensa,int pvelocidad,int pfuerza):flying(nombre,batallas,exp){
+paratroopa::paratroopa(string nombre,int batallas,int hp,int def,int vel,int fuer,int poder,string pcolor)
+            :flying(nombre,batallas,hp,def,vel,fuer,poder){
   color_Caparazon = pcolor;
-  hp = php;
-  defensa = pdefensa;
-  velocidad = pvelocidad;
-  fuerza = pfuerza;
 }
 
 paratroopa::paratroopa(){}
@@ -15,24 +12,9 @@ paratroopa::paratroopa(){}
 string paratroopa::getColorcaparazon(){
   return color_Caparazon;
 }
-int paratroopa::gethp(){
-  return hp;
-}
-
-int paratroopa::getDefensa(){
-  return defensa;
-}
-
-int paratroopa::getVelocidad(){
-  return velocidad;
-}
-
-int paratroopa::getFuerza(){
-  return fuerza;
-}
 
 paratroopa::~paratroopa(){}
 
-int paratroopa::ataque(){
-  return 0;
+void paratroopa::ataque(minion* mi){
+
 }

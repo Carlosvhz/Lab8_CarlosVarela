@@ -2,27 +2,20 @@
 #define HAMMERBRO_H
 
 #include "range.h"
+#include "minion.h"
 
 class hammerbro:public range{
 
   private:
     int tamanio_martillos;
-    int hp;
-    int defensa;
-    int velocidad;
-    int fuerza;
-
+    
   public:
     int getMartillo();
-    int gethp();
-    int getDefensa();
-    int getVelocidad();
-    int getFuerza();
     //Constructores
     hammerbro(string,int,int,int,int,int,int,int,int);
-    /*Nombre, batallas,exp,rango,tamaño,hp,defensa,velocidad,fuerza*/
+    /*Nombre,batallas,hp,def,vel,fuer,poder,rango,tamaño*/
     hammerbro();
     virtual ~hammerbro();
-    virtual int ataque();
+    void ataque(minion*);
 };
 #endif

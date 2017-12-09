@@ -3,6 +3,7 @@
 
 #include <string>
 #include "melee.h"
+#include "minion.h"
 
 using namespace std;
 
@@ -10,23 +11,15 @@ class chainchomp:public melee{
 
   private:
     string color;
-    int hp;
-    int defensa;
-    int velocidad;
-    int fuerza;
-
   public:
+    //Getters
     string getColor();
-    int gethp();
-    int getDefensa();
-    int getVelocidad();
-    int getFuerza();
     //Constructores
-    chainchomp(string,int,int,int,string,int,int,int,int);//
-    /*Nombre, batallas, exp, capacidad de intimidar,color,hp,defensa,velocidad,fuerza*/
+    chainchomp(string,int,int,int,int,int,int,int,string);//
+    /*Nombre,batallas,hp,def,vel,fuer,poder, capacidad, color*/
     chainchomp();
     virtual ~chainchomp();
-    virtual int ataque();
+    void ataque(minion*);
 };
 
 

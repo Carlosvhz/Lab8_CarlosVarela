@@ -2,28 +2,19 @@
 #define GOOMBA_H
 
 #include "melee.h"
-
+#include "minion.h"
 class goomba:public melee{
 
   private:
     int tamanio;
-    int hp;
-    int defensa;
-    int velocidad;
-    int fuerza;
 
   public:
-    int getSize();
-    int gethp();
-    int getDefensa();
-    int getVelocidad();
-    int getFuerza();
     //Constructores
     goomba(string,int,int,int,int,int,int,int,int);//
-    /*Nombre, batallas, exp, capacidad de intimidar,tamaño,hp,defensa,velocidad,fuerza*/
+    /*Nombre,batallas,hp,def,vel,fuer,poder, capacidad, tamaño*/
     goomba();
     virtual ~goomba();
-    virtual int ataque();
+    void ataque(minion*);
 };
 
 

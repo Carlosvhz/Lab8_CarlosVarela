@@ -10,11 +10,11 @@ class melee:public minion{
   public:
     int getCapacidadIntimidar();
     //Constructor y destructor
-    melee(string,int,int,int);
-      /*Nombre, batallas, exp, capacidad de intimidar*/
+    melee(string,int,int,int,int,int,int,int);
+    /*Nombre,batallas,hp,def,vel,fuer,poder, capacidad*/
     melee();
     virtual ~melee();
-    virtual int ataque();
+    virtual void ataque(minion*);
 };
 
 #endif

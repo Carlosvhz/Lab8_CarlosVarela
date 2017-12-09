@@ -3,6 +3,7 @@
 
 #include "range.h"
 #include <string>
+#include "minion.h"
 
 using namespace std;
 
@@ -10,22 +11,14 @@ class magikoopa:public range{
 
   private:
     string color_traje;
-    int hp;
-    int defensa;
-    int velocidad;
-    int fuerza;
 
   public:
     string getColortraje();
-    int gethp();
-    int getDefensa();
-    int getVelocidad();
-    int getFuerza();
     //Constructores
-    magikoopa(string,int,int,int,string,int,int,int,int);
-    /*Nombre, batallas,exp,rango,color,hp,defensa,velocidad,fuerza*/
+    magikoopa(string,int,int,int,int,int,int,int,string);
+   /*Nombre,batallas,hp,def,vel,fuer,poder,rango,Color*/
     magikoopa();
     virtual ~magikoopa();
-    virtual int ataque();
+    void ataque(minion*);
 };
 #endif

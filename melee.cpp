@@ -1,7 +1,8 @@
 #include "melee.h"
 
-/*Nombre, batallas, exp, capacidad de intimidar*/
-melee::melee(string nombre,int batallas ,int exp,int pcapacidad_intimidar):minion(nombre,batallas,exp){
+/*Nombre,batallas,hp,def,vel,fuer,poder, capacidad*/
+melee::melee(string nombre,int batallas, int hp, int def, int vel, int fuer, int poder, int pcapacidad_intimidar)
+      :minion(nombre,batallas,hp,def,vel,fuer,poder){
   capacidad_intimidar = pcapacidad_intimidar;
 }
 
@@ -13,6 +14,5 @@ int melee::getCapacidadIntimidar(){
 
 melee::~melee(){}
 
-int melee::ataque(){
-  return 0;
+void melee::ataque(minion*){
 }

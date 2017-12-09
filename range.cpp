@@ -1,7 +1,8 @@
 #include "range.h"
 
 /*Nombre, batallas, exp, rango*/
-range::range(string nombre,int batallas ,int exp,int prango_ataque):minion(nombre,batallas,exp){
+range::range(string nombre,int batallas, int hp, int def, int vel, int fuer, int poder, int prango_ataque)
+      :minion(nombre,batallas,hp,def,vel,fuer,poder){
   rango_ataque = prango_ataque;
 }
 
@@ -13,6 +14,5 @@ int range::getRango(){
 
 range::~range(){}
 
-int range::ataque(){
-  return 0;
+void range::ataque(minion* m){
 }

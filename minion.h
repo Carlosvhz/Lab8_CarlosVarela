@@ -7,20 +7,30 @@ using namespace std;
 
 class minion{
 
-  private:
+  protected:
     bool desocupado;
     string nombre;
-    int batallas_ganadas;
-    int exp;
+    int batallas_ganadas,exp,hp,def,vel,fuerza,poderEspecial;
 
   public:
+    //Getters
+    int getHP();
+    int getDefensa();
+    int getVelocidad();
+    int getFuerza();
+    int getPoder();
     string getNombre();
     bool getEstado();
+
+    //Setters
+    void setHP(int);
     void setEstado(bool);
-    minion(string,int,int);
+
+    //Constructores y destructores
+    minion(string,int,int,int,int,int,int);
     minion();
     virtual ~minion();
-    virtual int ataque();
+    /*Nombre,batallas,hp,def,vel,fuer,poder*/
 };
 
 #endif

@@ -10,11 +10,11 @@ class range:public minion{
   public:
     int getRango();
     //Constructor y destructor
-    range(string,int,int,int);
-      /*Nombre, batallas, exp, rango de ataque*/
+    range(string,int,int,int,int,int,int,int);
+    /*Nombre,batallas,hp,def,vel,fuer,poder,rango*/
     range();
     virtual ~range();
-    virtual int ataque();
+    virtual void ataque(minion*);
 };
 
 #endif

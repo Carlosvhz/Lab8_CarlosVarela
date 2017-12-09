@@ -1,13 +1,10 @@
 #include "chainchomp.h"
 
 
-/*Nombre, batallas, exp, capacidad de intimidar,color,hp,defensa,velocidad,fuerza*/
-chainchomp::chainchomp(string nombre,int batallas,int exp,int capacidad,string pcolor,int php,int pdefensa,int pvelocidad,int pfuerza):melee(nombre,batallas,exp,capacidad){
+/*Nombre,batallas,hp,def,vel,fuer,poder, capacidad, color*/
+chainchomp::chainchomp(string nombre,int batallas,int hp,int def,int vel,int fuer,int poder,int capacidad,string pcolor)
+          :melee(nombre,batallas,hp,def,vel,fuer,poder,capacidad){
   color = pcolor;
-  hp = php;
-  defensa = pdefensa;
-  velocidad = pvelocidad;
-  fuerza = pfuerza;
 }
 
 chainchomp::chainchomp(){}
@@ -15,24 +12,9 @@ chainchomp::chainchomp(){}
 string chainchomp::getColor(){
   return color;
 }
-int chainchomp::gethp(){
-  return hp;
-}
-
-int chainchomp::getDefensa(){
-  return defensa;
-}
-
-int chainchomp::getVelocidad(){
-  return velocidad;
-}
-
-int chainchomp::getFuerza(){
-  return fuerza;
-}
 
 chainchomp::~chainchomp(){}
 
-int chainchomp::ataque(){
+void chainchomp::ataque(minion*){
 
 }

@@ -221,7 +221,7 @@ void menuOpciones(int opcion, vector<minion*> *minions, vector<equipo*> *equipos
 
     case 4:{ // ====> Modificar equipos
       if(equipos->size()>0){
-        int num, op;
+        int num_equipo, op;
         cout<<" == Modificar equipos =="<<endl
             <<"Lista de equipos:"<<endl;
         for(int i=0; i<equipos->size(); i++){
@@ -229,8 +229,7 @@ void menuOpciones(int opcion, vector<minion*> *minions, vector<equipo*> *equipos
         }
         cout<<"¿Que desea hacer con estos equipos?"<<endl;
         cout<<"1. Agregar minions a la lista"<<endl
-            <<"2. Quitar minions de la lista"<<endl
-            <<"3. Salir"<<endl
+            <<"2. nada...Salir"<<endl
             <<"Ingrese el numero de opcion: ";
         cin>>op;
         while(op<0||op>3){
@@ -238,61 +237,33 @@ void menuOpciones(int opcion, vector<minion*> *minions, vector<equipo*> *equipos
           cin>>op;
         }
         cout<<"-Ingrese numero de equipo: ";
-        cin>>num;
-        while(num<0||num>equipos->size()-1){
+        cin>>num_equipo;
+        while(num_equipo<0||num_equipo>equipos->size()-1){
           cout<<"¡¡No existe este equipo!! Ingrese de nuevo: ";
-          cin>>num;
+          cin>>num_equipo;
         }
           switch(op){
 
             case 1:{ // ===> Agregar Minions
-              int numero;
-              char resp;
-              if(equipos->at(num)->getEquipo()->size()<6){ //Valida si el equipo esta incompleto
-                cout<<"Lista de minions: "<<endl;
-                for(int i=0; i<minions->size(); i++){ //Muestra la lista de minions-
-                  cout<<i<<".- Minion: "<<minions->at(i)->getNombre()<<endl;
-                }
-                do{
-                  cout<<"-Ingrese el numero del minion: ";
-                  cin>>numero;
-                  if(numero>=0&&numero<minions->size()){ //Si el numero esta en el intervalo de la lista de minions
-                    if((minions->at(numero))->getEstado()){ //Si el minion no esta ocupado
-                      equipos->at(num)->getEquipo()->push_back(minions->at(numero)); //Toma el equipo y su arreglo para asignarle un minion
-                      (minions->at(numero))->setEstado(false); //Le asigna al minion el estado de False (ocupado)
-                      cout<<"¡¡Minion agregado!!"<<endl;
-                    }else{
-                      cout<<"¡¡Minion no disponible!!";
-                    }
-                  }else{
-                    cout<<"¡¡Numero no valido!!";
-                  }
-                  cout<<"¿Desea continuar agregando minions al equipo?[s]: "; //Por si quiere asignar otro minion
-                  cin>>resp;
-                }while(resp=='s');
-              }else{cout<<"¡¡Equipo Lleno!!";}
-            }
-            break;
-
-            case 2:{ // ===> Quitar minions de la lista
-              int numero;
-              char resp;
-              do{
-                cout<<"Lista de minions del equipo seleccionado: "<<endl;
-                for(int i=0; i<equipos->at(num)->getEquipo()->size(); i++){
-                  cout<<i<<".- Minion: "<<equipos->at(num)->getEquipo()->at(i)->getNombre()<<endl;
-                }
-                cout<<"Ingrese numero del minion: ";
-                cin>>numero;
-                while(numero<0||numero>equipos->at(num)->getEquipo()->size()-1){
-                  cout<<"¡¡Numero no valido!! Ingrese otro numero: ";
-                  cin>>numero;
-                }
-                equipos->at(num)->getEquipo()->erase(equipos->at(num)->getEquipo()->begin()+numero);
-                cout<<"¡¡Minion eliminado!!"<<endl
-                    <<"¿Desea continuar eliminando minions del equipo?[s]: ";
-                cin>>resp;
-              }while(resp=='s');
+              int numero_minion;
+              cout<<endl;
+              cout<<"Lista de minions: ";
+              for(int i=0; i<minions->size(); i++){
+                cout<<i<<".- Minion: "<<minions->at(i)->getNombre()<<endl;
+              }
+              cout<<endl
+                  <<"Ingrese el numero de minion a ingresar: ";
+              cin>>numero_minion;
+              while(numero_minion<0||numero_minion>minions->size()-1){
+                cout<<"¡¡Numero invalido!! Ingrese numero: ";
+                cin>>numero_minion;
+              }
+              if(minions->at(numero_minion)->getEstado()){
+                equipos->at(num_equipo)->getEquipo()->push_back(minions->at(numero_minion));
+                cout<<"Minion agregado";
+              }else{
+                cout<<"¡¡Minion ocupado!!";
+              }
             }
             break;
           }
@@ -308,19 +279,21 @@ void menuOpciones(int opcion, vector<minion*> *minions, vector<equipo*> *equipos
         for(int i=0; i<equipos->size(); i++){
           cout<<i<<".- Contiene "<<equipos->at(i)->getEquipo()->size()<<endl;
         }
-        cout<<" (Elija equipos completos osea 7 minions) "<<endl
-            <<"Ingrese numero de equipo 1: ";
-        cin>>numero1;
-        cout<<"Ingrese numero de equipo 2: ";
+        cout<<"Elija equipos de 7 minions, ingrese numero equipo 1: ";
+        cin>> numero1;
+        cout<<"Elija equipos de 7 minions, ingrese numero equipo 2: ";
         cin>>numero2;
-        if(numero1!=numero2){
-          if(equipos->at(numero1)->getEquipo()->size()==7&&equipos->at(numero2)->getEquipo()->size()==7){
-            simulacion(equipos->at(numero1),equipos->at(numero2));
-          }else{
-            cout<<"¡¡ Equipos incompletos!!";
-          }
+        while(numero1<0||numero1>equipos->size()-1||numero2<0||numero2>equipos->size()-1||numero1==numero2){
+          cout<<"Ingrese bien los numeros... "<<endl
+              <<"Ingrese numero 1: ";
+          cin>>numero1;
+          cout<<"Ingrese numero 2: ";
+          cin>>numero2;
+        }
+        if(equipos->at(numero1)->getEquipo()->size()==7&&equipos->at(numero2)->getEquipo()->size()==7){
+          simulacion(equipos->at(numero1),equipos->at(numero2));
         }else{
-          cout<<"¡¡ Escoja numeros diferentes !!";
+          cout<<"¡¡Los equipos estan incompletos!!";
         }
       }else{
         cout<<"¡¡No hay suficientes equipos!!";

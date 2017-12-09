@@ -24,7 +24,7 @@ class boo:public flying{
     /*Nombre, batallas, exp,color,hp,defensa,velocidad,fuerza*/
     boo();
     virtual ~boo();
-
+    virtual int ataque();
 };
 
 

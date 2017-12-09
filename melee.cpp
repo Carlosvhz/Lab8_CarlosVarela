@@ -12,3 +12,7 @@ int melee::getCapacidadIntimidar(){
 }
 
 melee::~melee(){}
+
+int melee::ataque(){
+  return 0;
+}

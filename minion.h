@@ -20,6 +20,7 @@ class minion{
     minion(string,int,int);
     minion();
     virtual ~minion();
+    virtual int ataque();
 };
 
 #endif

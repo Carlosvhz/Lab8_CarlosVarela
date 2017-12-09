@@ -14,6 +14,7 @@ class melee:public minion{
       /*Nombre, batallas, exp, capacidad de intimidar*/
     melee();
     virtual ~melee();
+    virtual int ataque();
 };
 
 #endif

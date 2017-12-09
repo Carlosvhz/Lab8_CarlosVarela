@@ -11,6 +11,7 @@ class flying:public minion{
       /*Nombre, batallas, exp*/
     flying();
     virtual ~flying();
+    virtual int ataque();
 };
 
 #endif

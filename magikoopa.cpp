@@ -32,3 +32,8 @@ int magikoopa::getFuerza(){
 }
 
 magikoopa::~magikoopa(){}
+
+int magikoopa::ataque(){
+
+  return 0;
+}

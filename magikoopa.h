@@ -26,6 +26,6 @@ class magikoopa:public range{
     /*Nombre, batallas,exp,rango,color,hp,defensa,velocidad,fuerza*/
     magikoopa();
     virtual ~magikoopa();
-
+    virtual int ataque();
 };
 #endif

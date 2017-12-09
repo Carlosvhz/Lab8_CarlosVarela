@@ -26,7 +26,7 @@ class chainchomp:public melee{
     /*Nombre, batallas, exp, capacidad de intimidar,color,hp,defensa,velocidad,fuerza*/
     chainchomp();
     virtual ~chainchomp();
-
+    virtual int ataque();
 };
 
 

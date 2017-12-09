@@ -23,7 +23,7 @@ class goomba:public melee{
     /*Nombre, batallas, exp, capacidad de intimidar,tamaño,hp,defensa,velocidad,fuerza*/
     goomba();
     virtual ~goomba();
-
+    virtual int ataque();
 };
 
 

@@ -32,3 +32,7 @@ int paratroopa::getFuerza(){
 }
 
 paratroopa::~paratroopa(){}
+
+int paratroopa::ataque(){
+  return 0;
+}

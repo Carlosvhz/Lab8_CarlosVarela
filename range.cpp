@@ -12,3 +12,7 @@ int range::getRango(){
 }
 
 range::~range(){}
+
+int range::ataque(){
+  return 0;
+}

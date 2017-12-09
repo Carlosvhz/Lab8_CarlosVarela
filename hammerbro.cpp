@@ -32,3 +32,8 @@ int hammerbro::getFuerza(){
 }
 
 hammerbro::~hammerbro(){}
+
+int hammerbro::ataque(){
+
+  return 0;
+}

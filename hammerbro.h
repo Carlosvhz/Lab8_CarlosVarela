@@ -23,6 +23,6 @@ class hammerbro:public range{
     /*Nombre, batallas,exp,rango,tamaño,hp,defensa,velocidad,fuerza*/
     hammerbro();
     virtual ~hammerbro();
-
+    virtual int ataque();
 };
 #endif

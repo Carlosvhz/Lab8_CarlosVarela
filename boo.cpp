@@ -32,3 +32,8 @@ int boo::getFuerza(){
 }
 
 boo::~boo(){}
+
+int boo::ataque(){
+
+  return 0;
+}

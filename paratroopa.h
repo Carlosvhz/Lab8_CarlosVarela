@@ -24,7 +24,7 @@ class paratroopa:public flying{
     /*Nombre, batallas, exp,color,hp,defensa,velocidad,fuerza*/
     paratroopa();
     virtual ~paratroopa();
-
+    virtual int ataque();
 };
 
 

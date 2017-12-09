@@ -32,3 +32,8 @@ int goomba::getFuerza(){
 }
 
 goomba::~goomba(){}
+
+int goomba::ataque(){
+
+  return 0;
+}

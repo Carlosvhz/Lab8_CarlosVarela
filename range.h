@@ -14,6 +14,7 @@ class range:public minion{
       /*Nombre, batallas, exp, rango de ataque*/
     range();
     virtual ~range();
+    virtual int ataque();
 };
 
 #endif

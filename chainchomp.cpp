@@ -32,3 +32,7 @@ int chainchomp::getFuerza(){
 }
 
 chainchomp::~chainchomp(){}
+
+int chainchomp::ataque(){
+
+}
